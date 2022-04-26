@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using ver1;
 
 namespace Zadanie_1
@@ -16,7 +13,7 @@ namespace Zadanie_1
         public int ScanCounter { get; set; }
         public int Counter { get; set; }
 
-        public string FormatedDate = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
+        public string DateFormat = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
 
         public IDevice.State GetState()
         {
@@ -25,7 +22,7 @@ namespace Zadanie_1
 
         public void PowerOff()
         {
-            if (state == IDevice.State.on)
+            if (GetState() == IDevice.State.on)
             {
                 state = IDevice.State.off;
                 Console.WriteLine("... Device is off !");
@@ -34,21 +31,27 @@ namespace Zadanie_1
 
         public void PowerOn()
         {
-            if (state == IDevice.State.off)
+            if (GetState() == IDevice.State.off)
             {
                 state = IDevice.State.on;
                 Console.WriteLine("Device is on ...");
+                Counter++;
             }
         }
 
         public void Print(in IDocument document)
         {
-            Console.WriteLine(FormatedDate + " Print: " + document.GetFileName());
+            Console.WriteLine(DateFormat + " Print: " + document.GetFileName());
+            PrintCounter++;
         }
 
         public void Scan(out IDocument document, IDocument.FormatType formatType)
         {
-            Console.WriteLine(FormatedDate + " Scan: " + document.GetFileName());
+            document = new PDFDocument("PDF.pdf");
+
+            Console.WriteLine(DateFormat + " Scan: " + document.GetFileName());
+
+            ScanCounter++;
         }
 
         internal void ScanAndPrint()

@@ -17,3 +17,4 @@ C:\Users\McBezimienny\source\repos\MateuszWasik1\cs-lab04-Implementacje-interfej
 C:\Users\McBezimienny\source\repos\MateuszWasik1\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\ZadaniaInterfejsy\Zadanie1\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\McBezimienny\source\repos\MateuszWasik1\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\ZadaniaInterfejsy\Zadanie1\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\McBezimienny\source\repos\MateuszWasik1\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\ZadaniaInterfejsy\Zadanie1\bin\Debug\net5.0\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\McBezimienny\source\repos\MateuszWasik1\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\ZadaniaInterfejsy\Zadanie1\obj\Debug\net5.0\Zadanie1.csproj.AssemblyReference.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj": {}
+    "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj": {
+    "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
         "projectName": "Zadanie1UnitTests",
-        "projectPath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
+        "projectPath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
         "packagesPath": "C:\\Users\\McBezimienny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\obj\\",
+        "outputPath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\McBezimienny\\AppData\\Roaming\\NuGet\\NuGet.Config",

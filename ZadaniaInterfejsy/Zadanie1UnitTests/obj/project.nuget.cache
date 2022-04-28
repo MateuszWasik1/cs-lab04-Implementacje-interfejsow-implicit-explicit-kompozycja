@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uhRVb6Nhy9/SNBh50xKwOs9Plxq+DjMzKCdzGruTIA/C45ZP1liBYtOhlTHBe9Iy1YzWp3XChyiA2vLBDMBRtw==",
+  "dgSpecHash": "kGIlOvzBH+88C3KY22DRIpbn8fl4mqvdkzyEzx0BJ8+A4BtWdPJcUoHLY5isr4VeF1344nf+GsFqRUMen38qAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\McBezimienny\\source\\repos\\MateuszWasik1\\cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja\\ZadaniaInterfejsy\\Zadanie1UnitTests\\Zadanie1UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\McBezimienny\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\McBezimienny\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

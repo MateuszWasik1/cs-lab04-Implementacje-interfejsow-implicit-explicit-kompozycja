@@ -4,14 +4,14 @@ namespace ver1
 {
     public interface IDevice
     {
-        enum State {on, off};
+        enum State { on, off };
 
         void PowerOn(); // uruchamia urządzenie, zmienia stan na `on`
         void PowerOff(); // wyłącza urządzenie, zmienia stan na `off
         State GetState(); // zwraca aktualny stan urządzenia
 
-        int Counter {get;}  // zwraca liczbę charakteryzującą eksploatację urządzenia,
-                            // np. liczbę uruchomień, liczbę wydrukow, liczbę skanów, ...
+        int Counter { get; }  // zwraca liczbę charakteryzującą eksploatację urządzenia,
+                              // np. liczbę uruchomień, liczbę wydrukow, liczbę skanów, ...
     }
 
     public abstract class BaseDevice : IDevice
@@ -28,7 +28,7 @@ namespace ver1
         public void PowerOn()
         {
             state = IDevice.State.on;
-            Console.WriteLine("Device is on ...");  
+            Console.WriteLine("Device is on ...");
         }
 
         public int Counter { get; private set; } = 0;
@@ -50,4 +50,10 @@ namespace ver1
         void Scan(out IDocument document, IDocument.FormatType formatType);
     }
 
+    public interface ICopier : IDevice, IPrinter, IScanner
+    {
+        int PrintCounter { get; }
+        int ScanCounter { get; }
+        void ScanAndPrint();
+    }
 }

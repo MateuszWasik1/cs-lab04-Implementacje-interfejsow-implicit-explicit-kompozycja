@@ -1,62 +1,67 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Text;
 using ver1;
 
 namespace Zadanie_1
 {
-
-    public class Copier : IPrinter, IScanner, IDevice
+    public class Copier : BaseDevice, ICopier
     {
-        private IDevice.State state;
-
-        public int PrintCounter { get; set; }
-        public int ScanCounter { get; set; }
-        public int Counter { get; set; }
-
+        public int PrintCounter { get; private set; } = 0;
+        public int ScanCounter { get; private set; } = 0;
+        public new int Counter { get; private set; } = 0;
         public string DateFormat = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
 
-        public IDevice.State GetState()
+        public void Print(in IDocument document)
         {
-            return state = IDevice.State.off;
+            if (GetState() == IDevice.State.off)
+                return;
+
+            Console.WriteLine("{0} Print: {1}", DateFormat, document.GetFileName());
+            ++PrintCounter;
         }
 
-        public void PowerOff()
+        public void Scan(out IDocument document, IDocument.FormatType formatType = IDocument.FormatType.JPG)
         {
-            if (GetState() == IDevice.State.on)
+            if (GetState() == IDevice.State.off)
             {
-                state = IDevice.State.off;
-                Console.WriteLine("... Device is off !");
+                document = null;
+                return;
             }
+
+            switch (formatType)
+            {
+                case IDocument.FormatType.JPG:
+                    document = new ImageDocument(String.Format("ImageScan{0}.jpg", ScanCounter));
+                    break;
+                case IDocument.FormatType.PDF:
+                    document = new PDFDocument(String.Format("PDFScan{0}.pdf", ScanCounter));
+                    break;
+                case IDocument.FormatType.TXT:
+                    document = new TextDocument(String.Format("TextScan{0}.txt", ScanCounter));
+                    break;
+                default:
+                    throw new ArgumentException("Undefined file type!");
+            }
+
+            Console.WriteLine("{0} Scan: {1}", DateFormat, document.GetFileName());
+            ++ScanCounter;
+        }
+
+        public void ScanAndPrint()
+        {
+            IDocument document;
+
+            Scan(out document, IDocument.FormatType.JPG);
+            Print(document);
         }
 
         public void PowerOn()
         {
             if (GetState() == IDevice.State.off)
-            {
-                state = IDevice.State.on;
-                Console.WriteLine("Device is on ...");
-                Counter++;
-            }
-        }
+                ++Counter;
 
-        public void Print(in IDocument document)
-        {
-            Console.WriteLine(DateFormat + " Print: " + document.GetFileName());
-            PrintCounter++;
-        }
-
-        public void Scan(out IDocument document, IDocument.FormatType formatType)
-        {
-            document = new PDFDocument("PDF.pdf");
-
-            Console.WriteLine(DateFormat + " Scan: " + document.GetFileName());
-
-            ScanCounter++;
-        }
-
-        internal void ScanAndPrint()
-        {
-            throw new NotImplementedException();
+            base.PowerOn();
         }
     }
 }

@@ -1,24 +1,12 @@
 ﻿using System;
 using ver1;
 
-namespace Zadanie_2
+namespace Zadanie_3
 {
-    public class MultifunctionalDevice : BaseDevice, IMultifunctionalDevice
+    public class Scanner : BaseDevice, IScanner
     {
-        public int SendCounter { get; private set; } = 0;
-        public int PrintCounter { get; private set; } = 0;
         public int ScanCounter { get; private set; } = 0;
-        public new int Counter { get; private set; } = 0;
         public string DateFormat = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
-
-        public void Print(in IDocument document)
-        {
-            if (GetState() == IDevice.State.off)
-                return;
-            Console.WriteLine("{0} Print: {1}", DateFormat, document.GetFileName());
-
-            ++PrintCounter;
-        }
 
         public void Scan(out IDocument document, IDocument.FormatType formatType = IDocument.FormatType.JPG)
         {
@@ -45,24 +33,6 @@ namespace Zadanie_2
             }
 
             Console.WriteLine("{0} Scan: {1}", DateFormat, document.GetFileName());
-        }
-
-        public void Send(in IDocument document)
-        {
-            if (GetState() == IDevice.State.off)
-            {
-                return;
-            }
-            Console.WriteLine("{0} Send: {1}", DateFormat, document.GetFileName());
-            ++SendCounter;
-
-        }
-
-        public void PowerOn()
-        {
-            if (GetState() == IDevice.State.off)
-                ++Counter;
-            base.PowerOn();
         }
     }
 }

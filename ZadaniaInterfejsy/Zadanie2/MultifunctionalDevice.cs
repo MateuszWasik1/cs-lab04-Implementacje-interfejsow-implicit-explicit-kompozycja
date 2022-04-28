@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ver1;
 
-namespace Zadanie_1
+namespace Zadanie_2
 {
-    public class Copier : BaseDevice, ICopier
+    public class MultifunctionalDevice : BaseDevice, IMultifunctionalDevice
     {
+        public int SendCounter { get; private set; } = 0;
         public int PrintCounter { get; private set; } = 0;
         public int ScanCounter { get; private set; } = 0;
         public new int Counter { get; private set; } = 0;
@@ -16,8 +15,8 @@ namespace Zadanie_1
         {
             if (GetState() == IDevice.State.off)
                 return;
-
             Console.WriteLine("{0} Print: {1}", DateFormat, document.GetFileName());
+
             ++PrintCounter;
         }
 
@@ -28,8 +27,8 @@ namespace Zadanie_1
                 document = null;
                 return;
             }
-            ++ScanCounter;
 
+            ++ScanCounter;
             switch (formatType)
             {
                 case IDocument.FormatType.JPG:
@@ -48,18 +47,30 @@ namespace Zadanie_1
             Console.WriteLine("{0} Scan: {1}", DateFormat, document.GetFileName());
         }
 
-        public void ScanAndPrint()
+        public void Send(in IDocument document)
         {
-            IDocument document;
+            if (GetState() == IDevice.State.off)
+            {
+                return;
+            }
 
-            Scan(out document, IDocument.FormatType.JPG);
-            Print(document);
+            ++SendCounter;
+
+            Console.WriteLine(
+                String.Format(
+                     "{0} Send fax: {1}",
+                     DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"),
+                     document.GetFileName()
+                )
+            );
         }
 
         public void PowerOn()
         {
             if (GetState() == IDevice.State.off)
+            {
                 ++Counter;
+            }
 
             base.PowerOn();
         }

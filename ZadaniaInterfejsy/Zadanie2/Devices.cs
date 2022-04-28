@@ -58,9 +58,7 @@ namespace ver1
     public interface IMultifunctionalDevice : IDevice, IPrinter, IScanner, IFax
     {
         int PrintCounter { get; }
-
         int ScanCounter { get; }
-
         int SendCounter { get; }
     }
 }
